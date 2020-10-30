@@ -1,0 +1,36 @@
+Fiona Au
+
+Email fau@u.rochester.edu
+NetID fau
+CSC 172 Lab T/R 2:00-3:15
+Project #2
+
+Files: Main, Node, Point, Line, Tree, Canvas(doesn't do anything, is sad that it is useless)
+
+My code starts by scanning in the file. It knows that the first line
+it looks for is the number of lines that will be drawn so that it can
+create a for loop to know how many lines of lines to scan in. After scanning
+in a line, it will store it in a node. The first line just gets stored as
+the root of the tree, but every node after that will have to be compared to
+all existing nodes in the tree. Depending on whether it is clockwise or 
+counterclockwise to each of the nodes in the tree, it will be put into the left 
+or right subtree until finally it has reached a null leaf, during which it be
+stored in that leaf. After the tree is completed, the program knows that the rest
+of the lines being scanned in are points to be tested. It creates Points out of
+those string inputs and those points are then tested to see if they are in the same
+region. To test this, I keep track of when it advances left or right down into the 
+tree. If both nodes have taken the same path, then they ended up in the same region,
+and are therefore not separated by any lines. If they are not in the same region, then
+I compare the points to each node/line in the tree. As soon as there is a line that
+is between both points, I know that it separates the, so I can return and print the
+coordinates of that line. Lastly, I simply traverse through the tree to count the
+total number of external nodes.
+
+I also attempted to do the extra credit, but I failed miserably. For some reason
+I couldn't transfer the values to the Canvas class successfully...something about
+statics and whatnot. I don't know. Whenever I tried drawing a line, it ended up as
+having the endpoints (0,0) and (0,0). Overall, very sad attempt.
+
+An obstacle I overcame was realizing I had to return node in my firstTest class.
+Unfortunately, I realized this very late, and if only I had realized it earlier, I could have
+saved myself many tears. If only.
